@@ -98,10 +98,6 @@ BOOL CWeighingManagerDlg::OnInitDialog()
 
 	// TODO:  在此添加额外的初始化代码
 	theApp.serialPort1.InitPort(this);
-
-	InitImageList();
-	InitToolBar();
-
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
 
@@ -154,68 +150,3 @@ HCURSOR CWeighingManagerDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
-void CWeighingManagerDlg::InitImageList()
-{
-	m_ImageListToolbar.Create(48, 48, ILC_COLOR24 | ILC_MASK, 1, 1);
-	m_ImageListToolbar.Add(AfxGetApp()->LoadIcon(IDI_ICON1));
-	m_ImageListToolbar.Add(AfxGetApp()->LoadIcon(IDI_ICON3));
-	m_ImageListToolbar.Add(AfxGetApp()->LoadIcon(IDI_ICON5));
-	m_ImageListToolbar.Add(AfxGetApp()->LoadIcon(IDI_ICON7));
-
-	m_ImageListHotToolbar.Create(48, 48, ILC_COLOR24 | ILC_MASK, 1, 1);
-	m_ImageListHotToolbar.Add(AfxGetApp()->LoadIcon(IDI_ICON1));
-	m_ImageListHotToolbar.Add(AfxGetApp()->LoadIcon(IDI_ICON3));
-	m_ImageListHotToolbar.Add(AfxGetApp()->LoadIcon(IDI_ICON5));
-	m_ImageListHotToolbar.Add(AfxGetApp()->LoadIcon(IDI_ICON7));
-
-}
-
-BOOL CWeighingManagerDlg::InitToolBar()
-{
-	UINT array[8];
-	array[0] = IDC_TOOLBAR_BUTTON1;//录音查询
-	array[1] = IDC_TOOLBAR_BUTTON2;//系统配置参数
-	array[2] = IDC_TOOLBAR_BUTTON3;//通道参数
-	array[3] = IDC_TOOLBAR_BUTTON4;//用户管理
-
-	m_ToolBar.Create(this);
-	m_ToolBar.SetButtons(array, 4);
-
-	m_ToolBar.SetButtonText(0, _T("自动识别"));
-	m_ToolBar.SetButtonText(1, _T("手动识别"));
-	m_ToolBar.SetButtonText(2, _T("生成报表"));
-	m_ToolBar.SetButtonText(3, _T("系统设置"));
-
-	m_ToolBar.GetToolBarCtrl().SetImageList(&m_ImageListToolbar);//关联图片到按钮上
-	m_ToolBar.GetToolBarCtrl().SetHotImageList(&m_ImageListToolbar);
-	m_ToolBar.GetToolBarCtrl().SetDisabledImageList(&m_ImageListToolbar);
-	m_ToolBar.GetToolBarCtrl().SetButtonWidth(60, 200);//设置按钮的宽度
-	m_ToolBar.SetSizes(CSize(68, 68), CSize(48, 48));//设置按钮大小
-	m_ToolBar.EnableToolTips(TRUE);//激活提示信息
-
-	//m_ToolBar.GetToolBarCtrl().SetState(IDC_TOOLBAR_BUTTON2, TBSTATE_INDETERMINATE);
-	//m_ToolBar.GetToolBarCtrl().SetState(IDC_TOOLBAR_BUTTON2, TBSTATE_ENABLED);
-	//m_ToolBar.GetToolBarCtrl().SetState(IDC_TOOLBAR_BUTTON2, TBSTATE_HIDDEN);
-	
-	RepositionBars(AFX_IDW_CONTROLBAR_FIRST, AFX_IDW_CONTROLBAR_LAST, 0, CWnd::reposDefault, NULL, NULL, true);
-
-	m_ToolBar.GetToolBarCtrl().SetWindowPos(&CWnd::wndBottom, 10, 10, 100, 0,
-		SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE);
-
-
-	//第二种方法加载位图
-	{
-		////使工具栏图标显示256色
-		//HBITMAP hbm = (HBITMAP)::LoadImage(AfxGetInstanceHandle(),  
-		//	MAKEINTRESOURCE(IDR_TOOLBAR1), //加载IDB_TOOLBAR 
-		//	IMAGE_BITMAP, //按位图格式
-		//	0,0, // cx,cy  
-		//	LR_CREATEDIBSECTION | LR_LOADMAP3DCOLORS ); 
-		//CBitmap bm;  
-		//bm.Attach(hbm); 
-		//m_ilToolBar.Create(48,48,ILC_COLOR8, 4, 4); 
-		//m_ilToolBar.Add(&bm,(CBitmap*)NULL); 
-	}
-
-	return true;
-}

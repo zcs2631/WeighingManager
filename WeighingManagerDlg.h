@@ -3,7 +3,7 @@
 //
 
 #pragma once
-#include "CToolBarEx.h"
+
 
 // CWeighingManagerDlg 对话框
 class CWeighingManagerDlg : public CDialogEx
@@ -29,11 +29,4 @@ protected:
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
-private:
-	void InitImageList();
-	BOOL InitToolBar();
-private:
-	CImageList      m_ImageListHotToolbar;//使工具栏图标显示256色
-	CImageList      m_ImageListToolbar;
-	CToolBarEx      m_ToolBar;
 };

@@ -104,7 +104,6 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CToolBarEx.h" />
     <ClInclude Include="LoginDlg.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -113,7 +112,6 @@
     <ClInclude Include="WeighingManagerDlg.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CToolBarEx.cpp" />
     <ClCompile Include="LoginDlg.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -129,10 +127,6 @@
     <None Include="res\WeighingManager.rc2" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\IDI_ICON1.ico" />
-    <Image Include="res\IDI_ICON3.ico" />
-    <Image Include="res\IDI_ICON5.ico" />
-    <Image Include="res\IDI_ICON7.ico" />
     <Image Include="res\WeighingManager.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -13,3 +13,5 @@ del /S *.ipch
 del /S *.exe
 del /S *.tlog
 del /S *.log
+rd  /s/q Debug
+rd  /s/q ipch

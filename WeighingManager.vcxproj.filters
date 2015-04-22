@@ -36,9 +36,6 @@
     <ClInclude Include="LoginDlg.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="CToolBarEx.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WeighingManager.cpp">
@@ -51,9 +48,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="LoginDlg.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="CToolBarEx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -69,18 +63,6 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\WeighingManager.ico">
-      <Filter>资源文件</Filter>
-    </Image>
-    <Image Include="res\IDI_ICON1.ico">
-      <Filter>资源文件</Filter>
-    </Image>
-    <Image Include="res\IDI_ICON3.ico">
-      <Filter>资源文件</Filter>
-    </Image>
-    <Image Include="res\IDI_ICON5.ico">
-      <Filter>资源文件</Filter>
-    </Image>
-    <Image Include="res\IDI_ICON7.ico">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>
